@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ashish Ambi | Portfolio</title>
+
+  <!-- Classy header font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* Mobile Navigation Styles */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text);
+    }
+    @media (max-width: 768px) {
+      .header {
+        position: relative;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-color, #ffffff);
+        padding: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 1000;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <nav class="navbar">
+    <div class="logo">Ashish Ambi</div>
+    <div class="header-controls">
+      <ul class="nav-links">
+      <li><a href="">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#roles">Roles</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ===== SINGLE PAGE CONTENT ===== -->
+<main class="one-page">
+
+  <!-- ABOUT -->
+  <div id="about" class="about-box" tabindex="0">
+  <img src="images/profile.jpg" alt="Ashish Ambi" class="profile-pic"/>
+
+  <h1>Ashish Ambi</h1>
+
+  <p>
+    SQL & PL/SQL Developer | Java Backend Developer | Automation & Selenium Testing | Manual Testing |
+    B.Tech AI & Data Science | Hands-on SQL, Core Java, DBMS| Trained @Qspiders
+  </p>
+  <p class="details-text" style="margin-top: 20px; text-align: justify;">
+    Welcome to my portfolio. Here you can explore my journey through software development, my academic background, and the projects I have built. Scroll down to learn more about my skills and experience.
+  </p>
+
+  </div>
+
+  <div class="section-separator"></div>
+
+  <!-- ROLES SECTION -->
+  <h2 id="roles" class="section-heading animate-card">Roles</h2>
+  <div class="content-grid">
+    <div class="role-card animate-card" tabindex="0">
+      <h4>SQL Developer</h4>
+      <p class="details-text" style="text-align: justify;">Analytical SQL Developer with strong database design and optimization skills.<br>Proficient in writing complex SQL queries involving multi-table joins, subqueries, CTEs, and window functions to extract meaningful insights from data. Hands-on experience in PL/SQL development including procedures, functions, packages, triggers, and cursors. Strong understanding of database normalization, indexing, performance tuning, and handling large datasets for data-driven applications.</p>
+    </div>
+    <div class="role-card animate-card" tabindex="0">
+      <h4>QA Engineer (Manual + Selenium Automation)</h4>
+      <p class="details-text" style="text-align: justify;">Quality-driven QA Engineer with strong Selenium automation skills.<br>Hands-on experience in designing and executing manual test cases and building reliable Selenium automation scripts using Java. Proficient in TestNG framework, handling locators, waits, pop-ups, frames, alerts, and browser interactions. Skilled in regression testing, defect tracking, and ensuring end-to-end application quality through structured test plans and automation strategies.</p>
+    </div>
+    <div class="role-card animate-card" tabindex="0">
+      <h4>Java Backend Developer</h4>
+      <p class="details-text" style="text-align: justify;">Java Backend Developer with a solid foundation in Core Java and backend concepts.<br>Strong knowledge of object-oriented programming (OOP), collections, exception handling, multithreading basics, and JDBC for database connectivity. Hands-on experience in writing clean, maintainable, and efficient backend code, following best practices and design principles. Comfortable working with SQL databases and integrating backend logic with frontend applications.</p>
+    </div>
+  </div>
+
+  <div class="section-separator"></div>
+
+  <!-- EDUCATION -->
+  <h2 id="education" class="section-heading animate-card">Education</h2>
+  <div class="content-grid">
+    <div class="education-card animate-card" tabindex="0">
+      <img src="images/fabtech_logo.jpg" alt="Fabtech Technical Campus" class="edu-img"/>
+      <h4>B.Tech – AI & DS</h4>
+      <p class="details-text">Fabtech Technical Campus College of Engineering, Sangola</p>
+      <div class="edu-meta"><span class="cgpa">74.30%</span> <span class="year">2025</span></div>
+    </div>
+    <div class="education-card animate-card" tabindex="0">
+      <img src="images/SIT_LOGO.jpg" alt="Sharad Institute of Technology" class="edu-img"/>
+      <h4>Diploma – Computer Science</h4>
+      <p class="details-text">Sharad Institute of Technology, Yadrav, Ichalkaranji</p>
+      <div class="edu-meta"><span class="cgpa">74.40%</span> <span class="year">2022</span></div>
+    </div>
+    <div class="education-card animate-card" tabindex="0">
+      <img src="images/vyankatrao_logo.jpg" alt="Vyankatrao High School" class="edu-img"/>
+      <h4>10th – SSC</h4>
+      <p class="details-text">Vyankatrao High School and Junior College, Ichalkaranji</p>
+      <div class="edu-meta"><span class="cgpa">77.20%</span> <span class="year">2018</span></div>
+    </div>
+  </div>
+
+  <div class="about-box animate-card" style="margin-top: -20px;">
+    <p class="details-text" style="margin: 0; text-align: justify;">
+      My academic career has provided me with a robust theoretical framework and practical exposure to modern technologies.
+    </p>
+  </div>
+
+  <div class="section-separator"></div>
+
+  <!-- SKILLS SECTION -->
+  <h2 id="skills" class="section-heading animate-card">Skills</h2>
+  <div class="content-grid">
+    <div class="skill-card animate-card" tabindex="0">
+      <h4>SQL</h4>
+      <ul><li>DDL, DML, DCL, TCL, DQL</li><li>Joins &amp; Subqueries</li><li>Constraints &amp; Keys</li><li>Aggregate Functions</li><li>Views, Indexes, Sequences</li><li>Query Optimization</li></ul>
+    </div>
+    <div class="skill-card animate-card" tabindex="0">
+      <h4>PL/SQL</h4>
+      <ul><li>Procedures &amp; Functions</li><li>Cursors (Implicit &amp; Explicit)</li><li>Triggers &amp; Packages</li><li>Exception Handling</li><li>Records &amp; Collections</li><li>Control Statements</li></ul>
+    </div>
+    <div class="skill-card animate-card" tabindex="0">
+      <h4>Core Java</h4>
+      <ul><li>OOP Concepts</li><li>Data Types &amp; Operators</li><li>Arrays &amp; Strings</li><li>Exception Handling</li><li>Wrapper Classes</li><li>Basic Collections</li></ul>
+    </div>
+    <div class="skill-card animate-card" tabindex="0">
+      <h4>Java + Selenium</h4>
+      <ul><li>Selenium WebDriver</li><li>Locators </li><li>Handling Alerts &amp; Frames</li><li>Waits (Implicit, Explicit)</li><li>TestNG &amp; Maven</li><li>Automation Framework Basics</li></ul>
+    </div>
+    <div class="skill-card animate-card" tabindex="0">
+      <h4>Manual Testing</h4>
+      <ul><li>Test Cases &amp; Scenarios</li><li>Test Planning &amp; Strategy</li><li>Bug Reporting &amp; Lifecycle</li><li>Regression Testing</li><li>Smoke &amp; Sanity Testing</li><li>UAT</li></ul>
+    </div>
+  </div>
+
+  <div class="section-separator"></div>
+
+  <!-- PROJECTS SECTION -->
+  <h2 id="projects" class="section-heading animate-card">Projects</h2>
+  <div class="content-grid">
+    <div class="project-card animate-card" tabindex="0">
+      <h4>Real Estate Management System (SQL-PL/SQL)</h4>
+      <p class="details-text" style="text-align: justify;">A comprehensive database solution for managing property listings, agents, and client interactions. Utilizes complex PL/SQL procedures for automated reporting.</p>
+      <a href="https://github.com/ashish2739/SQL-Database-Projects" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project-card animate-card" tabindex="0">
+      <h4>RedBus-Style Bus Booking System (Core Java)</h4>
+      <p class="details-text" style="text-align: justify;">A console-based booking system demonstrating OOP principles, collection frameworks, and exception handling to manage bus schedules and passenger reservations.</p>
+      <a href="https://github.com/ashish2739/core-java-projects" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project-card animate-card" tabindex="0">
+      <h4>Custom Data Structures (Core Java)</h4>
+      <p class="details-text" style="text-align: justify;">Implementation of custom ArrayList, LinkedList, and HashMap classes to understand the internal working mechanisms of Java Collections.</p>
+      <a href="https://github.com/ashish2739/core-java-projects" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project-card animate-card" tabindex="0">
+      <h4>ShopperStack Web App Testing</h4>
+      <p class="details-text" style="text-align: justify;">Performed extensive manual testing including functional, regression, and UI testing. Documented test cases and bug reports to ensure application stability.</p>
+      <a href="https://github.com/ashish2739/manual-testing-documentation" target="_blank">View Testing Docs</a>
+    </div>
+    <div class="project-card animate-card" tabindex="0">
+      <h4>OrangeHRM Manual Testing</h4>
+      <p class="details-text" style="text-align: justify;">Conducted end-to-end manual testing on OrangeHRM. Documented test scenarios for Admin and PIM modules and reported defects with severity analysis.</p>
+      <a href="https://github.com/ashish2739/manual-testing-documentation" target="_blank">View Testing Docs</a>
+    </div>
+    <div class="project-card animate-card" tabindex="0">
+      <h4>Automation Exercise (Selenium)</h4>
+      <p class="details-text" style="text-align: justify;">Automated critical user flows on the Automation Exercise website using Selenium WebDriver, Java, and TestNG. Implemented data-driven testing framework.</p>
+      <a href="https://github.com/ashish2739/selenium-automation-framework" target="_blank">View on GitHub</a>
+    </div>
+  </div>
+
+  <div class="section-separator"></div>
+
+  <div class="bottom-row">
+    <div id="certificates" class="certificates-box animate-card" tabindex="0">
+      <h2>Certificates</h2>
+      
+      <a href="https://www.hackerrank.com/certificates/f49033ed9f9e" target="_blank">HackerRank Skills Certification – SQL (Basic)</a>
+      <p class="details-text" style="text-align: justify;">Validated fundamental SQL concepts including simple queries, relationships, and aggregators. This certification helped solidify my understanding of data retrieval basics.</p>
+
+      <a href="https://www.hackerrank.com/certificates/e7080ebf77fe" target="_blank">HackerRank Skills Certification – SQL (Intermediate)</a>
+      <p class="details-text" style="text-align: justify;">Tested proficiency in complex joins, subqueries, and unions. Earning this demonstrated my ability to handle more sophisticated database schemas and reporting requirements.</p>
+
+      <a href="https://www.hackerrank.com/certificates/1f9166616ab0" target="_blank">HackerRank Skills Certification – JAVA (Basic)</a>
+      <p class="details-text" style="text-align: justify;">Covered core Java language features, object-oriented programming, and exception handling. This milestone sharpened my problem-solving skills in backend development.</p>
+
+      <p class="details-text" style="text-align: justify;">
+        Pursuing these certifications has been instrumental in bridging the gap between academic theory and practical application. They have provided me with a structured path to master industry-standard technologies, ensuring I can write clean, efficient, and maintainable code.
+      </p>
+    </div>
+
+    <div id="resume" class="resume-box animate-card" tabindex="0">
+      <h2>Resume</h2>
+      
+      <p class="details-text" style="font-style: italic; margin-bottom: 10px; text-align: justify;">
+        "Transforming complex data into insights and logic into robust software solutions."
+      </p>
+
+      <ul class="resume-highlights">
+        <li><i class="fas fa-database"></i> <span><strong>SQL & PL/SQL Expert:</strong> Optimization & Design</span></li>
+        <li><i class="fas fa-code"></i> <span><strong>Java Backend:</strong> OOPs & Collections</span></li>
+        <li><i class="fas fa-vial"></i> <span><strong>QA Automation:</strong> Selenium & TestNG</span></li>
+      </ul>
+
+      <div class="resume-actions">
+        <a href="pdf/Ashish_Ambi_Resume.pdf" download class="resume-btn">
+          <i class="fas fa-download"></i> Download PDF
+        </a>
+        <a href="pdf/Ashish_Ambi_Resume.pdf" target="_blank" class="resume-btn outline">
+          <i class="fas fa-eye"></i> View PDF
+        </a>
+      </div>
+      <p class="details-text" style="text-align: justify;">
+        Grab a copy of my resume to see the full timeline of my projects, certifications, and academic achievements.
+      </p>
+    </div>
+
+    <div id="contact" class="contact-box animate-card" tabindex="0">
+      <h3>Contact</h3>
+      <div class="contact-links">
+      <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJZZzJFmJjrwgvDxPBKdwZNxMdztTKMprvwTKQzjmbPVMzPNpPdZkVswTstkcQVTkXJqvVB"><i class="fas fa-envelope"></i> Email</a>
+      <a href="https://www.linkedin.com/in/ashish-ambi" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/ashish2739" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://wa.me/918378885159?text=Hello%20Ashish%2C%20I%27m%20contacting%20you%20from%20your%20portfolio" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="tel:+918378885159"><i class="fas fa-phone"></i> +91 83788 85159</a>
+      </div>
+      
+      <form action="https://formsubmit.co/ashishambi2019@gmail.com" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+
+      <p class="details-text" style="text-align: justify;">
+        Feel free to reach out for collaboration, job opportunities, or just to say hi. I am available via Email, LinkedIn, and WhatsApp.
+      </p>
+    </div>
+
+  </div>
+
+</main>
+
+<script src="script.js"></script>
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,607 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: url("./images/tech-bg.jpg") no-repeat center/cover;
+  min-height: 100vh;
+  font-size: 18px; /* increase base font size */
+}
+
+/* Theme variables (default = dark theme) */
+:root {
+  --header-bg: rgba(0,0,0,0.35);
+  --text: #ffffff;
+  --muted: #e5e5e5;
+  --primary: #00f2fe;
+  --card-bg: rgba(0,0,0,0.55);
+  --card-text: #ffffff;
+  --btn-bg: #2cece3;
+  --btn-text: #0a0a0a;
+  --skill-bg: #0077ff;
+  --profile-border: #00f2fe;
+  --resume-bg: rgba(0,0,0,0.55);
+  --input-bg: rgba(255,255,255,0.05);
+  --input-border: rgba(255,255,255,0.1);
+  --input-focus-bg: rgba(255,255,255,0.1);
+  --card-border: rgba(255,255,255,0.04);
+  --glow-shadow: rgba(0, 242, 254, 0.35);
+  --glow-border: rgba(0, 242, 254, 0.4);
+  --hover-overlay: rgba(0, 242, 254, 0.06);
+}
+
+/* Light theme override */
+.light-theme {
+  --header-bg: rgba(255,255,255,0.75);
+  --text: #0b0b0b;
+  --muted: #333333;
+  --primary: #0077ff;
+  --card-bg: rgba(255,255,255,0.9);
+  --card-text: #0b0b0b;
+  --btn-bg: #0077ff;
+  --btn-text: #ffffff;
+  --skill-bg: #005fcc;
+  --profile-border: #0077ff;
+  --resume-bg: rgba(255,255,255,0.95);
+  --input-bg: rgba(0,0,0,0.05);
+  --input-border: rgba(0,0,0,0.2);
+  --input-focus-bg: rgba(0,0,0,0.08);
+  --card-border: rgba(0,0,0,0.1);
+  --glow-shadow: rgba(0, 119, 255, 0.25);
+  --glow-border: rgba(0, 119, 255, 0.4);
+  --hover-overlay: rgba(0, 119, 255, 0.06);
+}
+
+/* ===== HEADER ===== */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--header-bg);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+}
+
+.navbar {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: var(--text);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* ===== PAGE ===== */
+.one-page {
+  padding-top: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+}
+
+/* Section headings (Projects, Roles, Skills) */
+.section-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: -20px; /* Pull the grid up a bit */
+}
+
+/* GLASS CARD */
+.about-box,
+.content-grid > div,
+.education-card,
+.bottom-row > div {
+  background: var(--card-bg);
+  color: var(--card-text);
+  padding: 25px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+/* ABOUT */
+.about-box {
+  max-width: 700px;
+  text-align: center;
+}
+
+/* Unified box header style */
+.about-box h1,
+.middle-grid > div h2,
+.bottom-row > div h2, .bottom-row > div h3,
+.skills-box h3,
+.contact-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.6rem; /* uniform header size */
+  letter-spacing: 0.4px;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+/* Slightly larger name header but aligned visually */
+.about-box h1 { font-size: 1.6rem; }
+
+/* Education Card Styles */
+.education-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--primary);
+}
+
+.edu-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.edu-meta {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Generic grid for projects, roles, and skills */
+.content-grid {
+  width: 95%;
+  max-width: 1300px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 36px;
+}
+/* Card-specific styles */
+.project-card h4, .role-card h4, .skill-card h4, .education-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--primary);
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 15px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+.skill-card ul {
+  list-style: none;
+  padding-left: 5px;
+  margin-top: 10px;
+}
+
+.skill-card li {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.skill-card li::before {
+  content: '•';
+  color: var(--primary);
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* make skills-box full width and bottom-row layout */
+.skills-box {
+  width: 95%;
+  max-width: 1300px;
+  margin: 0 auto 28px;
+}
+
+.bottom-row {
+  width: 95%;
+  max-width: 1300px;
+  margin: 0 auto 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.certificates-box, .resume-box, .contact-box {
+  padding: 15px;
+}
+
+/* Make certificates and contact boxes match glass card style */
+.certificates-box,
+.contact-box {
+  background: var(--card-bg);
+  color: var(--card-text);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+  border: 1px solid var(--card-border);
+}
+
+/* Pop-in animation for certificates box when it becomes visible */
+.certificates-box.animate-card.show {
+  animation: popIn 420ms cubic-bezier(.2,.9,.2,1), glow 3000ms ease-in-out 700ms infinite;
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: translateY(18px) scale(0.98); }
+  60% { opacity: 1; transform: translateY(-6px) scale(1.02); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 12px 35px rgba(0,0,0,0.35), 0 0 0 rgba(0,0,0,0);
+  }
+  50% {
+    box-shadow: 0 18px 45px rgba(0,0,0,0.38), 0 0 28px var(--hover-overlay);
+  }
+  100% {
+    box-shadow: 0 12px 35px rgba(0,0,0,0.35), 0 0 0 rgba(0,0,0,0);
+  }
+}
+
+/* Certificates box styling matches other boxes */
+.certificates-box {
+  padding: 15px;
+  /* ensure base shadow is present */
+  box-shadow: 0 12px 35px rgba(0,0,0,0.35) !important;
+}
+
+.certificates-box a {
+  display: block;
+  margin: 8px 0;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.certificates-box .details-text {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+/* ===== PROFILE PHOTO ===== */
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 4px solid var(--profile-border);
+  margin: 0 auto 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+/* CONTACT */
+.contact-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.contact-box a {
+  display: block;
+  margin: 0;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+/* Show on hover */
+.skill-item:hover .skill-dropdown {
+  /* Keep old dropdowns hidden; subskills shown in #skillText */
+  display: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== RESUME CARD ANIMATION ===== */
+/* ===== RESUME CARD (FIXED ANIMATION) ===== */
+/* ===== RESUME CARD (SCROLL ANIMATION) ===== */
+.resume-box {
+  max-width: 400px;
+  background: var(--resume-bg);
+  color: var(--card-text);
+  gap: 250px;
+  
+  padding: 15px;
+  border-radius: 16px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Activated state */
+.resume-box.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Premium hover */
+.resume-box:hover {
+  box-shadow: 0 20px 45px rgba(0, 242, 254, 0.4);
+}
+
+/* ===== UNIVERSAL PREMIUM GLOW EFFECT ===== */
+.about-box,
+.content-grid > div,
+.education-card,
+.resume-box,
+.contact-box,
+.certificates-box {
+  transition: 
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border 0.4s ease;
+  position: relative;
+}
+
+/* .about-box:hover,
+.roles-box:hover,
+.skills-box:hover,
+.projects-box:hover,
+.resume-box:hover,
+.education-box:hover,
+.contact-box:hover,
+.certificates-box:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0, 242, 254, 0.35);
+  border: 1px solid rgba(0, 242, 254, 0.4);
+} */
+
+.animate-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px var(--glow-shadow);
+  border: 1px solid var(--glow-border);
+}
+
+
+
+/* Ensure certificates box gets the cyan blurred halo too (override if needed) */
+.bottom-row .certificates-box:hover {
+  transform: none; /* prevent popping up on hover */
+  /* match resume block shadow exactly */
+  box-shadow: 0 20px 45px var(--glow-border) !important;
+  border: 1px solid var(--glow-border);
+  transition: box-shadow 0.4s ease, border 0.4s ease;
+}
+
+/* Highlight state when navigated to from header */
+.animate-card.highlight,
+.highlight {
+  animation: highlightPulse 1800ms ease-in-out;
+  box-shadow: 0 30px 80px rgba(0,242,254,0.22) !important;
+  border: 1px solid rgba(0,242,254,0.5) !important;
+}
+
+@keyframes highlightPulse {
+  0% { box-shadow: 0 12px 35px rgba(0,0,0,0.35), 0 0 0 rgba(0,0,0,0); }
+  50% { box-shadow: 0 30px 80px rgba(0,242,254,0.28), 0 0 40px rgba(0,242,254,0.08); }
+  100% { box-shadow: 0 12px 35px rgba(0,0,0,0.35), 0 0 0 rgba(0,0,0,0); }
+}
+
+/* Add an external blurred halo using a pseudo-element so glow appears outside the box */
+.bottom-row .certificates-box::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: inherit;
+  background: var(--hover-overlay);
+  filter: blur(18px);
+  opacity: 0;
+  transition: opacity 320ms ease, filter 320ms ease;
+  pointer-events: none;
+  z-index: 1;
+}
+.bottom-row .certificates-box:hover::before {
+  opacity: 1;
+  filter: blur(20px);
+}
+
+/* Bring the hovered certificates box above siblings so the halo isn't clipped */
+.bottom-row:hover {
+  z-index: 5;
+  /* box-shadow: 0 20px 45px rgba(0, 242, 254, 0.4); */
+}
+
+/* ===== SUBTLE HOVER HIGHLIGHT (CLICK SAFE) ===== */
+.animate-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--hover-overlay);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.animate-card:hover::after {
+  opacity: 1;
+}
+.resume-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.resume-highlights {
+  list-style: none;
+  text-align: left;
+  margin: 0 auto 10px;
+  max-width: 320px; /* Keeps list compact and centered */
+}
+
+.resume-highlights li {
+  margin-bottom: 6px;
+  color: var(--muted);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.resume-highlights li i {
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+/* ===== PAGE ENTRY ANIMATION (ALL CARDS) ===== */
+.animate-card {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.resume-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  margin: 10px;
+  background: var(--primary);
+  color: var(--btn-text);
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Resume embed styles */
+.resume-embed {
+  width: 100%;
+  margin-top: 12px;
+}
+.resume-embed iframe {
+  width: 100%;
+  height: 680px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+}
+
+/* Theme toggle button (header) */
+.theme-toggle {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 18px;
+  margin-right: 12px;
+}
+
+/* ===== DETAILED DESCRIPTION TEXT ===== */
+.details-text {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ===== CONTACT FORM ===== */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--text);
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary);
+  background: var(--input-focus-bg);
+}
+
+.contact-form button {
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: none;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 242, 254, 0.3);
+}
+
+/* ===== SECTION SEPARATOR ===== */
+.section-separator {
+  width: 80%;
+  max-width: 1300px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  margin: 40px auto;
+  opacity: 0.8;
+}
